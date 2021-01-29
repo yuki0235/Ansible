@@ -1,0 +1,29 @@
+---
+- name: installed git
+  yum:
+    name: git
+    state: installed
+- name: installed wget
+  yum:
+    name: wget
+    state: installed
+- name: installed java
+  yum:
+    name: java
+    state: installed
+- name: get jenkins repo
+  get_url:
+    url: https://pkg.jenkins.io/redhat/jenkins.repo
+    dest: /etc/yum.repos.d/jenkins.repo
+- name: add the jenkins repo key
+  rpm_key:
+    key: https://pkg.jenkins.io/redhat/jenkins.io.key
+- name: installed jenkins by latest version
+  yum:
+    name: jenkins
+    state: present
+- name: jenkins booted and auto boot conf
+  service:
+    name: jenkins
+    state: started
+    enabled: yes

@@ -85,7 +85,7 @@ $ vi hosts
 
 [web:vars]
 ansible_ssh_port=22
-ansible_ssh-user=ec2-user
+ansible_ssh_user=ec2-user
 ansible_ssh_private_key_file=<秘密鍵PATH>
 ========================
 ```

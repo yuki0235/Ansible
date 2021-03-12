@@ -135,6 +135,9 @@ $ vi playbook.yml
     name: jenkins
     state: started
     enabled: yes
+- name: installed ansible
+  shell: amazon-linux-extras install -y ansible2
+  changed_when: False
 ========================
 ```
 

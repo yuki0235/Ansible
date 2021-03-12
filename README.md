@@ -222,14 +222,14 @@ JENKINS_USER="ec2-user"
 $ sudo chown -R ec2-user: /var/lib/jenkins /var/log/jenkins /var/cache/jenkins
 ```
 
-上記まで完了したらjenkinsのプロセスを再起動して設定を読み込み直させる
+上記まで完了したらjenkinsのプロセスを再起動して設定を読み込み直す
 ```
 $ sudo systemctl restart jenkins.service
 ```
 ### 8.jenkinsからの各種ジョブ実行
 - git cloneジョブ
   - 「ソースコード管理」>「Git」を選択して、リポジトリURLを入力
-    - この時、httpsでのURLを使用すれば認証なしでclone可能
+    - この時、httpsでのURLを使用すれば認証なしでclone可能（ただし、パブリックなリポジトリであることが必要）
 - CFnのstack作成ジョブ
   - 「高度な設定」>「カスタムワークスペースを使用」でcloneしたリポジトリのPATHを設定
   - 「ビルド・トリガ」>「他プロジェクトの後にビルド」>「対象プロジェクト」にgit cloneを行うジョブ名を設定

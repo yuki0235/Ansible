@@ -218,6 +218,11 @@ JENKINS_USER="ec2-user"
 ```
 $ sudo chown -R ec2-user: /var/lib/jenkins /var/log/jenkins /var/cache/jenkins
 ```
+
+上記まで完了したらjenkinsのプロセスを再起動して設定を読み込み直させる
+```
+$ sudo systemctl restart jenkins.service
+```
 ### 8.jenkinsからの各種ジョブ実行
 - git cloneジョブ
   - 「ソースコード管理」>「Git」を選択して、リポジトリURLを入力

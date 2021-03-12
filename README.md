@@ -233,11 +233,7 @@ $ sudo systemctl restart jenkins.service
   - 「ビルド」>「シェルの実行」で以下を設定
     ```
     #!/bin/bash -xe
-    export TZ="Asia/Tokyo"
-
-    SUFFIX=`date "+%Y%m%d%H%M%S"`
-    STACK_NAME="livecording-${SUFFIX}"
-    sudo -u ec2-user aws cloudformation create-stack --stack-name $STACK_NAME --template-body file://$WORKSPACE/service/VPC/only_vpc.yml
-    sudo -u ec2-user aws cloudformation wait stack-create-complete --stack-name $STACK_NAME
+    aws cloudformation create-stack --stack-name $STACK_NAME --template-body file://$WORKSPACE/service/VPC/only_vpc.yml
+    aws cloudformation wait stack-create-complete --stack-name $STACK_NAME
     ```
   

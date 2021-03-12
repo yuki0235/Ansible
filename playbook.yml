@@ -2,4 +2,4 @@
 - hosts: web
   become: yes
   tasks:
-    - include: tasks/main.yml
+    - include: tasks/sub.yml

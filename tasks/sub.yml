@@ -1,0 +1,9 @@
+---
+- name: installed git
+  yum:
+    name: git
+    state: installed
+- name: installed wget
+  yum:
+    name: wget
+    state: installed

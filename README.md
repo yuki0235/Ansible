@@ -10,7 +10,7 @@ $ sudo yum update -y
 $ sudo amazon-linux-extras info ansible2
 
 # ansibleのインストール
-$ sudo amazon-linux-extras install ansible2
+$ sudo amazon-linux-extras install  -y ansible2
 
 # インストールしたansibleのバージョン確認
 $ ansible --version

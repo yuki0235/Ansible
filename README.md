@@ -237,7 +237,8 @@ $ sudo systemctl restart jenkins.service
   - 「ビルド」>「シェルの実行」で以下を設定
     ```
     #!/bin/bash -xe
-    aws cloudformation create-stack --stack-name $STACK_NAME --template-body file://$WORKSPACE/service/VPC/only_vpc.yml
+    STACK_NAME="SampleCfnStack"
+    aws cloudformation create-stack --stack-name $STACK_NAME --template-body file://$WORKSPACE/service/sample.cfn.yml
     aws cloudformation wait stack-create-complete --stack-name $STACK_NAME
     ```
   

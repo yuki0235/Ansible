@@ -1,5 +1,5 @@
 [web]
-18.180.134.142
+54.250.116.243
 
 [web:vars]
 ansible_ssh_port=22

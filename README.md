@@ -127,6 +127,9 @@ $ vi playbook.yml
 - name: add the jenkins repo key
   rpm_key:
     key: https://pkg.jenkins.io/redhat/jenkins.io.key
+- name: installed epel
+  shell: amazon-linux-extras install -y epel
+  changed_when: False
 - name: installed jenkins by latest version
   yum:
     name: jenkins
